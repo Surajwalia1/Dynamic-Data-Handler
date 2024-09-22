@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+## Dynamic Table Management with React and MongoDB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a **Dynamic Table Management** app built using **React.js** with a **Node.js** backend and **MongoDB** for data storage. It allows users to dynamically add, update, delete, filter, and sort data, and save it to a database. The table supports two column types: "text" and "number". Rows can be added, deleted, and filtered dynamically with modals enhancing the user experience.
 
-## Available Scripts
+### Features
+- **Dynamic Table Creation**: 
+  - Add/Remove columns with text or number data types.
+  - Add/Delete rows with editable cell data.
+  - Support for complex cell values (e.g., arrays like `["Apple", "Orange"]`).
+  
+- **Data Storage**:
+  - Save and retrieve table data using a **MongoDB** database.
+  - Automatic data persistence across sessions.
 
-In the project directory, you can run:
+- **Data Filtering**: 
+  - Filter rows based on column data.
+  - Separate filter types for text (e.g., contains, does not contain) and number (e.g., greater than, less than) columns.
 
-### `npm start`
+- **Sorting Functionality**: 
+  - Sort columns based on text or number data.
+  
+- **Modals for Interaction**: 
+  - Add, delete, and edit rows and columns using modals for an intuitive user experience.
+  
+- **Logging for Debugging**:
+  - Console logging on every add/delete action to track user interactions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Responsive UI**: 
+  - Eye-pleasing, responsive interface with HCI design principles for easy navigation and usage.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Tech Stack
+- **Frontend**: React.js, HTML/CSS, JavaScript
+- **Backend**: Node.js, Express.js, MongoDB
+- **Database**: MongoDB (with Mongoose ODM)
+- **Other Libraries**: Axios (for API requests), React Modal, React Table
 
-### `npm test`
+### Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these steps to set up the project on your local machine:
 
-### `npm run build`
+#### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+- MongoDB (either locally or using MongoDB Atlas)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/yourusername/dynamic-table-management.git
+```
 
-### `npm run eject`
+2. **Navigate to the project folder**:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+cd dynamic-table-management
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Install dependencies for both frontend and backend**:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# In the project root (for React)
+npm install
+# or
+yarn install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Navigate to the backend folder and install dependencies
+cd backend
+npm install
+# or
+yarn install
+```
 
-## Learn More
+4. **Start the backend server**:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ensure MongoDB is running locally or set up MongoDB Atlas and update the connection string in `server.js`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+# From the backend folder
+node server.js
+```
 
-### Code Splitting
+5. **Start the React development server**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+# From the project root
+npm start
+# or
+yarn start
+```
 
-### Analyzing the Bundle Size
+Your React app should now be running on [localhost:3000](http://localhost:3000), and the backend server on [localhost:5000](http://localhost:5000).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Project Structure
+```plaintext
+backend/
+├── models/
+│   └── Data.js                # Mongoose schema for table data
+├── server.js                  # Express server with API endpoints
+src/
+├── components/
+│   ├── DataTable.js           # Main table component
+│   ├── AddRowModal.js         # Modal to add new row
+│   └── DeleteRowModal.js      # Modal to delete row
+├── App.js                     # Root component
+├── App.css                    # Styles for the app
+└── index.js                   # Entry point
+```
 
-### Making a Progressive Web App
+### API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **GET /api/data**: Retrieve all rows from the MongoDB database.
+- **POST /api/data**: Add a new row to the database.
+- **DELETE /api/data/:id**: Delete a specific row from the database.
 
-### Advanced Configuration
+### How to Use
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. **Add Row**: Click the `+ Add Row` button to open a modal where you can input details like `Name`, `Age`, and `Fruits`. After submitting, the new row will be added to the table and stored in the MongoDB database.
+2. **Delete Row**: Click the delete icon in the row you want to remove. A confirmation modal will appear, and you can confirm to delete. The data will also be removed from MongoDB.
+3. **Add Column**: Click the `+ Add New Column` button to add a column with a custom name and data type (text/number).
+4. **Filter and Sort**: Click the filter icons next to each column name to filter data based on content or values.
+5. **Console Logging**: Actions like adding/deleting rows and columns trigger console logs for easier debugging.
 
-### Deployment
+### CSS Styles
+The app uses **Human-Computer Interaction (HCI)** principles to ensure a user-friendly interface. The colors, hover effects, and modals are designed to enhance the user experience and readability.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Database Connection
+Ensure you have a MongoDB instance running (either locally or through MongoDB Atlas). Update the MongoDB connection string in the `server.js` file as needed:
 
-### `npm run build` fails to minify
+```javascript
+mongoose.connect('mongodb://localhost:27017/yourdbname', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Contributing
+Feel free to fork this repository and submit pull requests with improvements or bug fixes. Contributions are always welcome!
+
+### License
+This project is licensed under the MIT License.
