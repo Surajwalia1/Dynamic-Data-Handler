@@ -1,0 +1,165 @@
+/* Global styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  height: 100vh;
+}
+
+.App {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Table Styles */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.data-table th, .data-table td {
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  color: #333;
+}
+
+.data-table th {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.data-table td {
+  background-color: #f9f9f9;
+}
+
+.data-table td:last-child, .data-table th:last-child {
+  text-align: center;
+}
+
+.data-table button {
+  background-color: #f44336;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.data-table button:hover {
+  background-color: #d32f2f;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add Row & Add Column Buttons */
+.add-row-btn, .add-column-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px;
+}
+
+.add-row-btn:hover, .add-column-btn:hover {
+  background-color: #218838;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Modals */
+.Modal {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  max-width: 400px;
+  margin: auto;
+}
+
+.Modal h2 {
+  font-size: 1.6rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.Modal label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.Modal input, .Modal select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.Modal button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Modal button:first-of-type {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.Modal button:first-of-type:hover {
+  background-color: #0056b3;
+}
+
+.Modal button:last-of-type {
+  background-color: #ccc;
+  color: #333;
+}
+
+.Modal button:last-of-type:hover {
+  background-color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .data-table th, .data-table td {
+    padding: 8px;
+  }
+
+  .add-row-btn, .add-column-btn {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+
+  .App {
+    padding: 15px;
+  }
+}

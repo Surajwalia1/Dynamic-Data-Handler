@@ -1,0 +1,132 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .App {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .data-table th, .data-table td {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+  }
+  
+  .data-table th {
+    background-color: #4caf50;
+    color: white;
+    position: relative;
+  }
+  
+  .data-table th button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-left: 8px;
+  }
+  
+  .data-table th button:hover {
+    opacity: 0.8;
+  }
+  
+  .data-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .data-table tr:hover {
+    background-color: #e0f7fa;
+  }
+  
+  .add-row-btn, .reset-filters-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-row-btn:hover, .reset-filters-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .filter-menu {
+    position: absolute;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 10;
+  }
+  
+  .filter-menu input {
+    margin-bottom: 5px;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+  }
+  
+  .filter-menu button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-menu button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Modal styles */
+  .ReactModal__Overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .ReactModal__Content {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .ReactModal__Content h2 {
+    margin: 0 0 20px 0;
+  }
+  
+  .ReactModal__Content button {
+    margin-right: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .ReactModal__Content button:hover {
+    background-color: #45a049;
+  }
+  
