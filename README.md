@@ -48,7 +48,7 @@ Follow these steps to set up the project on your local machine:
 1. **Clone the repository**:
 
 ```bash
-git clone https://github.com/yourusername/dynamic-table-management.git
+git clone https://github.com/Surajwalia1/dynamic-table-management.git
 ```
 
 2. **Navigate to the project folder**:
